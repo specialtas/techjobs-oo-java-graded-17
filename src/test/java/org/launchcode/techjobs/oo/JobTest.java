@@ -8,6 +8,7 @@ public class JobTest {
     //TODO: Create your unit tests here
     private Job job1;
     private Job job2;
+    private final String newLine = System.lineSeparator();
 
     @Test
     public void testSettingJobId() {
@@ -45,7 +46,46 @@ public class JobTest {
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        assertEquals(job1, job2);
+        assertNotEquals(job1, job2);
     }
+//@Test
+//public void testToStringStartsAndEndsWithNewLine() {
+//    Job job = new Job();
+//    String toStringResult = job.toString();
+//    // the following defines the expected string to start and end with a line separator
+//    String expectedString = newLine + "ID: " + job.getId() + newLine;
+//    assertEquals(expectedString, toStringResult);
+//}
+@Test
+public void testToStringStartsAndEndsWithNewLine() {
+    Job job = new Job();
+    String toStringResult = job.toString();
+    // Check if the first and last characters are new lines
+    assertEquals('\n', toStringResult.charAt(0));
+    assertEquals('\n', toStringResult.charAt(toStringResult.length() - 1));
+}
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String toString = job.toString();
 
+        assertTrue(toString.contains("ID: " + job.getId()));
+        assertTrue(toString.contains("Name: Product tester"));
+        assertTrue(toString.contains("Employer: ACME"));
+        assertTrue(toString.contains("Location: Desert"));
+        assertTrue(toString.contains("Position Type: Quality control"));
+        assertTrue(toString.contains("Core Competency: Persistence"));
+    }
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String toString = job.toString();
+
+        assertTrue(toString.contains("Name: Data not available"));
+        assertTrue(toString.contains("Employer: Data not available"));
+        assertTrue(toString.contains("Location: Data not available"));
+        assertTrue(toString.contains("Position Type: Data not available"));
+        assertTrue(toString.contains("Core Competency: Data not available"));
+    }
 }

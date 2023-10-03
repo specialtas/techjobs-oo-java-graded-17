@@ -6,13 +6,14 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-    private String value;
+//    private String value;
 // i am not sure if I need to put this ^ here
     private String name;
     private Employer employer;
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
+    private String newLine = System.lineSeparator();
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -20,11 +21,12 @@ public class Job {
     public Job() {
         id = nextId;
         nextId++;
+        name = "Data not available"; // this sets a default value for the name field
     }
-    public Job(String value) {
-        this();
-        this.value = value;
-    }
+//    public Job(String value) {
+//        this();
+//        this.value = value;
+//    }
     //I am not sure if I need to put this here ^
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this.name = name;
@@ -32,23 +34,30 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+        id = nextId;
+        nextId++;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
-    @Override
-    public String toString() {
-        return value;
-    }
+ //   @Override
+//    public String toString() {
+//        return value;
+//    }
 //I am not sure that I need to put this here ^
+ @Override
+ public String toString() {
+     String idString =  "ID: " + getId() + "\n";
+     String nameString = "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + "\n";
+     String employerString = "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer().getValue()) + "\n";
+     String locationString = "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation().getValue()) + "\n";
+     String positionTypeString = "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType().getValue()) + "\n";
+     String coreCompetencyString = "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency().getValue()) + "\n";
 
-//public boolean equals(Object o) {  // Two objects are equal if they have the same id.
-//    if (this == o) return true;
-//    if (!(o instanceof Job)) return false;
-//    Job job = (Job) o;
-//    return getId() == job.getId();
-//}
+     return idString + nameString + employerString + locationString + positionTypeString + coreCompetencyString;
+ }
+
 @Override
 public boolean equals(Object o) {
     if (this == o) return true;
@@ -60,18 +69,7 @@ public boolean equals(Object o) {
     public int hashCode() {
         return Objects.hash(getId());
     }
-//@Override
-//public boolean equals(Object o) {
-//    if (this == o) return true;
-//    if (o == null || getClass() != o.getClass()) return false;
-//    Job otherJob = (Job) o;
-//    return id == otherJob.id;
-//}
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     public int getId() {

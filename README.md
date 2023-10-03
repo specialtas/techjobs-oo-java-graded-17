@@ -20,7 +20,7 @@ The starter code contains 6 unit test classes.  Each class contains tests for ea
 
 `TestTaskFive` tests the unit tests the students created for their custom `ToString` method.  
 
-`TestTaskSix` verifies that students used proper inheritance between `Location`, `Employer`, `CoreCompetency`, `PositionType` and `JobField`.  For example, `Employer` should extend `JobField`.  These tests focus on the existance of the extension rather than the behavior of the extension. 
+`TestTaskSix` verifies that students used proper inheritance between `Location`, `Employer`, `CoreCompetency`, `PositionType` and `org.launchcode.techjobs.oo.Location.JobField`.  For example, `Employer` should extend `org.launchcode.techjobs.oo.Location.JobField`.  These tests focus on the existance of the extension rather than the behavior of the extension. 
 
 `AbstractTest` verifies the behavior of the DRY code.  
 
@@ -50,17 +50,17 @@ Submission cannot be graded on unit tests alone.  The tests will provide answers
 
 The autograding tests will verify the answers to these checks.  If you ask a student to demo their assignment in real-time, these checks could be useful areas to verify overall functionality.  Have them create a new `job` object and make sure it behaves as expected.  
  
-1. Has the student made an abstract `JobField` class?
+1. Has the student made an abstract `org.launchcode.techjobs.oo.Location.JobField` class?
    1. Does the class programmatically assign a new ID for each instance?
-   1. Do `CoreCompetency`, `Employer`, `Location`, and `PositionType` extend from `JobField`?
-   1. Does `JobField` contain getters and setters for the value field?
-   1. Does `JobField` contain only a getter for the `id` field? If the student has included a setter for this field, ask them why, or remind them why this is not a good practice.
-   1. Does `JobField` contain a custom `toString()` method that returns an object's `value` field?
-   1. Does `JobField` contain custom `equals()` and `hashCode()` methods?
+   1. Do `CoreCompetency`, `Employer`, `Location`, and `PositionType` extend from `org.launchcode.techjobs.oo.Location.JobField`?
+   1. Does `org.launchcode.techjobs.oo.Location.JobField` contain getters and setters for the value field?
+   1. Does `org.launchcode.techjobs.oo.Location.JobField` contain only a getter for the `id` field? If the student has included a setter for this field, ask them why, or remind them why this is not a good practice.
+   1. Does `org.launchcode.techjobs.oo.Location.JobField` contain a custom `toString()` method that returns an object's `value` field?
+   1. Does `org.launchcode.techjobs.oo.Location.JobField` contain custom `equals()` and `hashCode()` methods?
 
 1. Has the student written the constructors for the `Job` class?
    1. Does the default constructor programmatically assign a new ID to each instance?
-   1. Is there another constructor that calls the default and initializes a new object with the `JobField` subclasses as its parameters?
+   1. Is there another constructor that calls the default and initializes a new object with the `org.launchcode.techjobs.oo.Location.JobField` subclasses as its parameters?
    1. Does it contain appropriate getters and setters? `nextID` and `id` should not have setters. `nextID` should also not have a getter.
    1. Does it contain custom `toString()`, `equals()`, and `hashCode()` methods?
 
@@ -76,7 +76,7 @@ printing the `Job` object. Give the student a 1/1 score if they have met the req
 or leave comments on areas that need to be re-addressed.
  
 The goal of the assignment is to reinforce object-oriented coding and best practices.
-Ask them about their experience extending `JobField`, for example. Do they have
+Ask them about their experience extending `org.launchcode.techjobs.oo.Location.JobField`, for example. Do they have
 an understanding of why this is a good idea or what benefits this offers?
 
 ### Appearance and Output:
