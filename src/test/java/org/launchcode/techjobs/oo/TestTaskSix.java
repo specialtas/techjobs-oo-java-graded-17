@@ -13,7 +13,7 @@ public class TestTaskSix extends AbstractTest {
     @Test
     public void testJobFieldClassExists() {
         try {
-            Class theClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+            Class theClass = getClassByName("JobField");
         } catch (ClassNotFoundException e) {
             fail("Class org.launchcode.techjobs.oo.org.launchcode.techjobs.oo.Location.JobField does not exist");
         }
@@ -27,7 +27,7 @@ public class TestTaskSix extends AbstractTest {
         Class superclass;
 
         try {
-            jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+            jobFieldClass = getClassByName("JobField");
         } catch (ClassNotFoundException e) {
             fail("Class org.launchcode.techjobs.oo.Employer does not exist");
         }
@@ -50,7 +50,7 @@ public class TestTaskSix extends AbstractTest {
         Class superclass;
 
         try {
-            jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+            jobFieldClass = getClassByName("JobField");
         } catch (ClassNotFoundException e) {
             fail("Class org.launchcode.techjobs.oo.Employer does not exist");
         }
@@ -73,7 +73,7 @@ public class TestTaskSix extends AbstractTest {
         Class superclass;
 
         try {
-            jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+            jobFieldClass = getClassByName("JobField");
         } catch (ClassNotFoundException e) {
             fail("Class org.launchcode.techjobs.oo.Employer does not exist");
         }
@@ -96,7 +96,7 @@ public class TestTaskSix extends AbstractTest {
         Class superclass;
 
         try {
-            jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+            jobFieldClass = getClassByName("JobField");
         } catch (ClassNotFoundException e) {
             fail("Class org.launchcode.techjobs.oo.Employer does not exist");
         }

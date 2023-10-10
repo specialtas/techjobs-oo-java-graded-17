@@ -111,7 +111,7 @@ public class TestTaskTwo extends AbstractTest {
             PositionType.class.getDeclaredMethod("equals", Object.class);
         } catch (NoSuchMethodException e) {
             try {
-                Class jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+                Class jobFieldClass = getClassByName("JobField");
                 Class superclass = PositionType.class.getSuperclass();
                 assertEquals(jobFieldClass, superclass);
                 superclass.getDeclaredMethod("equals", Object.class);
@@ -147,7 +147,7 @@ public class TestTaskTwo extends AbstractTest {
             PositionType.class.getDeclaredMethod("hashCode");
         } catch (NoSuchMethodException e) {
             try {
-                Class jobFieldClass = getClassByName("org.launchcode.techjobs.oo.Location.JobField");
+                Class jobFieldClass = getClassByName("JobField");
                 Class superclass = PositionType.class.getSuperclass();
                 assertEquals(jobFieldClass, superclass);
                 superclass.getDeclaredMethod("hashCode");

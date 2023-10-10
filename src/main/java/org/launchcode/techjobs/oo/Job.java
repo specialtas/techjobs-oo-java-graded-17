@@ -6,8 +6,7 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-//    private String value;
-// i am not sure if I need to put this ^ here
+
     private String name;
     private Employer employer;
     private Location location;
@@ -22,11 +21,7 @@ public class Job {
         nextId++;
         name = "Data not available"; // this sets a default value for the name field
     }
-//    public Job(String value) {
-//        this();
-//        this.value = value;
-//    }
-    //I am not sure if I need to put this here ^
+
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this.name = name;
         this.employer = employer;
@@ -48,11 +43,11 @@ public class Job {
  @Override
  public String toString() {
      String idString =  "\nID: " + getId() + "\n";
-     String nameString = "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + "\n";
-     String employerString = "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer().getValue()) + "\n";
-     String locationString = "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation().getValue()) + "\n";
-     String positionTypeString = "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType().getValue()) + "\n";
-     String coreCompetencyString = "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency().getValue()) + "\n";
+     String nameString = "Name: " + (getName() != null && !getName().isEmpty() ? getName() : "Data not available") + "\n";
+     String employerString = "Employer: " + (getEmployer() != null && getEmployer().getValue() != null && !getEmployer().getValue().isEmpty() ? getEmployer().getValue() : "Data not available") + "\n";
+     String locationString = "Location: " + (getLocation() != null && getLocation().getValue() != null && !getLocation().getValue().isEmpty() ? getLocation().getValue() : "Data not available") + "\n";
+     String positionTypeString = "Position Type: " + (getPositionType() != null && getPositionType().getValue() != null && !getPositionType().getValue().isEmpty() ? getPositionType().getValue() : "Data not available") + "\n";
+     String coreCompetencyString = "Core Competency: " + (getCoreCompetency() != null && getCoreCompetency().getValue() != null && !getCoreCompetency().getValue().isEmpty() ? getCoreCompetency().getValue() : "Data not available") + "\n";
 
      return idString + nameString + employerString + locationString + positionTypeString + coreCompetencyString;
  }

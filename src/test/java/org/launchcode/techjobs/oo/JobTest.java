@@ -48,17 +48,11 @@ public class JobTest {
 
         assertNotEquals(job1, job2);
     }
-//@Test
-//public void testToStringStartsAndEndsWithNewLine() {
-//    Job job = new Job();
-//    String toStringResult = job.toString();
-//    // the following defines the expected string to start and end with a line separator
-//    String expectedString = newLine + "ID: " + job.getId() + newLine;
-//    assertEquals(expectedString, toStringResult);
-//}
+
 @Test
 public void testToStringStartsAndEndsWithNewLine() {
-    Job job = new Job();
+    Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+            new PositionType("Quality control"), new CoreCompetency("Persistence"));
     String toStringResult = job.toString();
     // Check if the first and last characters are new lines
     assertTrue(toStringResult.startsWith("\n"));
