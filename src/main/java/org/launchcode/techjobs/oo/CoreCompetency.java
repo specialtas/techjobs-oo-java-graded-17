@@ -6,6 +6,8 @@ public class CoreCompetency extends JobField {
 public CoreCompetency(String value) {
         super(value);
         }
+
+}
 //    private int id;
 //    private static int nextId = 1;
 //    private String value;
@@ -32,15 +34,4 @@ public CoreCompetency(String value) {
 //    //  ONLY a getter for the 'id' field.
 //
 //
-//    public String getValue() {
-//        return value;
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setValue(String value) {
-//        this.value = value;
-//    }
-}
+

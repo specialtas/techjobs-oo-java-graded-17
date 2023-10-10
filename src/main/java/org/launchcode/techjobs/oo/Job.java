@@ -13,7 +13,6 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
-    private String newLine = System.lineSeparator();
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -48,7 +47,7 @@ public class Job {
 //I am not sure that I need to put this here ^
  @Override
  public String toString() {
-     String idString =  "ID: " + getId() + "\n";
+     String idString =  "\nID: " + getId() + "\n";
      String nameString = "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + "\n";
      String employerString = "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer().getValue()) + "\n";
      String locationString = "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation().getValue()) + "\n";

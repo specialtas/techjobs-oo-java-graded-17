@@ -34,13 +34,12 @@ public abstract class JobField {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof JobField)) return false;
-        JobField jobField = (JobField) o;
-        return getId() == jobField.getId();
+        if (!(o instanceof JobField jobField)) return false;
+        return id == jobField.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(id);
     }
 }

@@ -61,8 +61,8 @@ public void testToStringStartsAndEndsWithNewLine() {
     Job job = new Job();
     String toStringResult = job.toString();
     // Check if the first and last characters are new lines
-    assertEquals('\n', toStringResult.charAt(0));
-    assertEquals('\n', toStringResult.charAt(toStringResult.length() - 1));
+    assertTrue(toStringResult.startsWith("\n"));
+    assertTrue(toStringResult.endsWith("\n"));
 }
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
